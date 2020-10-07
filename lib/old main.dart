@@ -48,7 +48,7 @@ class _HalamanJsonState extends State<HalamanJson> {
             padding: EdgeInsets.zero,
             children: <Widget>[
               DrawerHeader(
-                // child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSejCufqekqw27KmFC7zMeec__1dBZnSMYcIA&usqp=CAU"),
+                child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSejCufqekqw27KmFC7zMeec__1dBZnSMYcIA&usqp=CAU"),
                 decoration: BoxDecoration(
                   color: Colors.blue[600]
                 ),

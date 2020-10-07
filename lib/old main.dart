@@ -34,6 +34,7 @@ class _HalamanJsonState extends State<HalamanJson> {
 
   @override
   void initState() {
+    super.initState();
     this.ambildata();
   }
   
@@ -131,6 +132,7 @@ class _DetailAlQuran extends State<DetailAlQuran> {
 
   @override
   void initState() {
+    super.initState();
     this.ambildata();
   }
 

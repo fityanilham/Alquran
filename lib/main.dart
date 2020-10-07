@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'AlQuran.dart';
 
 void main() {
   runApp(MaterialApp (

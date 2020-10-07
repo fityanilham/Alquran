@@ -37,9 +37,21 @@ class _AlQuranState extends State<AlQuran> {
         itemBuilder: (context, i) {
           return ListTile(
             title: Text(dataAlQuran[i].nama),
-            subtitle: Text("{$dataAlQuran[i].type} | {$dataAlQuran[i].ayat} ayat"),
+            subtitle: Text("${dataAlQuran[i].type} | ${dataAlQuran[i].ayat} ayat"),
             trailing: Text(dataAlQuran[i].asma),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) {
+                    return DetailAlQuran(
+                      nomor : dataAlQuran[i].nomor,
+                      nama : dataAlQuran[i].nama,
+                    );
+                  }
+                )  
+              );
+            },
           );
         }
       )

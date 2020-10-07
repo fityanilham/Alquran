@@ -43,6 +43,33 @@ class _HalamanJsonState extends State<HalamanJson> {
       appBar: AppBar(
         title: Text("Al-Quran"),
       ),
+      drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                // child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSejCufqekqw27KmFC7zMeec__1dBZnSMYcIA&usqp=CAU"),
+                decoration: BoxDecoration(
+                  color: Colors.blue[600]
+                ),
+              ),
+              ListTile(
+                title: Text('tea'),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  // do something
+                },
+              ),
+              ListTile(
+                title: Text('dad'),
+                trailing: Icon(Icons.chevron_right),
+                onTap: () {
+                  // do something
+                },
+              ),
+            ],
+          ),
+        ),
       body: Container(
         child: ListView.builder(
           itemCount: datadariJSON == null ? 0 : datadariJSON.length,
@@ -56,7 +83,7 @@ class _HalamanJsonState extends State<HalamanJson> {
                 "ayat" ??
                 ""
               ),
-              trailing: Icon(Icons.keyboard_arrow_right),
+              trailing: Icon(Icons.more_vert),
               onTap: () {
                 Navigator.push(
                   context, 
@@ -119,22 +146,24 @@ class _DetailAlQuran extends State<DetailAlQuran> {
           itemCount: dataAlquranJSON == null ? 0 : dataAlquranJSON.length,
           itemBuilder: (context, i) {
             return ListTile(
-              title: Text(dataAlquranJSON[i]['ar'] ?? ""),
+              trailing: Text(dataAlquranJSON[i]['nomor'] ?? ""),
+              title: Text(dataAlquranJSON[i]['ar'] ?? "", textAlign: TextAlign.end,),
               subtitle: Container(
                 child: Column(
                   children: [
-                    Text(dataAlquranJSON[i]['ar'] ?? ""),
+                    // Text(dataAlquranJSON[i]['ar'] ?? ""),
                     Html(data: dataAlquranJSON[i]['tr'] ?? ""),
-                    // import flutter_html dulu di pubspec.yml di dependencies:
-                    // flutter:
-                    //   sdk: flutter
-                    // http: ^0.12.0+1
-                    // flutter_html: 
-                    Text(dataAlquranJSON[i]['id'] ?? "")
+                    Text(dataAlquranJSON[i]['id'] ?? ""),
+                    Html(
+                      data: """
+                      <div>
+                        <hr>
+                      </div>
+                    """,
+                    )
                   ],
                 ),
               ),
-//              subtitle: Html(data: dataAlquranJSON[i]['s'] ?? ""),
             );
           },
         ),

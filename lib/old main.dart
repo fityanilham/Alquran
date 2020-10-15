@@ -84,7 +84,7 @@ class _HalamanJsonState extends State<HalamanJson> {
                 "ayat" ??
                 ""
               ),
-              trailing: Icon(Icons.more_vert),
+              trailing: Text(datadariJSON[i]['asma']),
               onTap: () {
                 Navigator.push(
                   context, 

@@ -1,8 +1,8 @@
 import 'package:alquran/model/AyatModel.dart';
 import 'package:http/http.dart' as http;
 
-class AlQuranViewModel {
-  Future<List> getAlQuran(int nomor) async {
+class AyatViewModel {
+  Future<List> getAyat(int nomor) async {
     try {
       http.Response hasil = await http.get(
         Uri.encodeFull("https://al-quran-8d642.firebaseio.com/surat/${nomor}.json?print=pretty"),

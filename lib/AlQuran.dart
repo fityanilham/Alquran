@@ -32,35 +32,37 @@ class _AlQuranState extends State<AlQuran> {
         title: Image.asset("assets/img/backApp.png"),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(200),
-          child: Container(
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
-                )
-              ),
-              child: Container(
-                child: FlatButton.icon(
-                  onPressed: () {
-                    Navigator.push(
-                      context, 
-                      MaterialPageRoute(builder: (context) => jadwal.Home())
-                    );
-                  }, 
-                  icon: Icon(
-                    Icons.keyboard_arrow_right, 
-                    color: Colors.grey[700], 
-                  ),
-                  label: Text(
-                    "Mencari Lokasi ...",
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                      fontSize: 14
+          child: Card(
+            child: Container(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  )
+                ),
+                child: Container(
+                  child: FlatButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => jadwal.Home())
+                      );
+                    }, 
+                    icon: Icon(
+                      Icons.keyboard_arrow_right, 
+                      color: Colors.grey[700], 
                     ),
+                    label: Text(
+                      "Mencari Lokasi ...",
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontSize: 14
+                      ),
+                    )
                   )
                 )
-              )
+              ),
             ),
           )
         ),
